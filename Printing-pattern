@@ -1,1 +1,129 @@
+--1. Pattern 1:
+declare @var1 varchar(20), @intgr int, @i int;
+set @var1 = 'SOMASREE'
+set @intgr =0
+set @i = len(@var1)
 
+while (@intgr<@i)
+begin
+  set @intgr +=1
+	print substring(@var1,1,@intgr)
+	
+end
+;
+S
+SO
+SOM
+SOMA
+SOMAS
+SOMASR
+SOMASRE
+SOMASREE
+
+--2. Pattern 2:
+declare @var1 varchar(20), @intgr int, @i int;
+set @var1 = 'SOMASREE'
+set @intgr =0
+set @i = len(@var1)
+
+while (@intgr<=@i)
+begin
+
+	print substring(@var1,1,@i-@intgr)
+	set @intgr +=1
+end
+;
+
+SOMASREE
+SOMASRE
+SOMASR
+SOMAS
+SOMA
+SOM
+SO
+S
+ 
+ 
+ -- Pattern 3:
+ 
+ declare @var1 varchar(20), @intgr int, @i int;
+set @var1 = 'SOMASREE'
+set @intgr =0
+set @i = len(@var1)
+
+while (@intgr<@i)
+begin
+	set @intgr +=1
+	print space(@i-@intgr) + substring(@var1,1,@intgr)
+	
+end ;
+
+       S
+      SO
+     SOM
+    SOMA
+   SOMAS
+  SOMASR
+ SOMASRE
+SOMASREE
+
+-- Pattern 4:
+
+declare @var1 varchar(20), @intgr int, @i int;
+set @var1 = 'SOMASREE'
+set @intgr =0
+set @i = len(@var1)
+
+while (@intgr<@i)
+begin
+	
+	print space(@intgr) + substring(@var1,1,@i-@intgr)
+	set @intgr +=1
+	
+end
+;
+
+SOMASREE
+ SOMASRE
+  SOMASR
+   SOMAS
+    SOMA
+     SOM
+      SO
+       S
+ 
+-- Pattern 5:
+
+declare @var1 varchar(20), @intgr int, @i int;
+set @var1 = 'SOMASREE'
+set @intgr =0
+set @i = len(@var1)
+
+while (@intgr<@i)
+begin
+	set @intgr +=1
+	print  substring(@var1,@intgr,1)
+end
+;
+
+S
+O
+M
+A
+S
+R
+E
+E
+
+-- Pattern 6:
+declare @var1 varchar(20), @intgr int, @i int;
+set @var1 = 'SOMASREE'
+set @intgr =0
+set @i = len(@var1)
+
+while (@i>0)
+begin
+	print  substring(@var1,@i,1)
+	set @i -=1
+end
+;
